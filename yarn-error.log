@@ -1,8 +1,8 @@
 Arguments: 
-  D:\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js docs:dev
+  D:\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add -D vuepress
 
 PATH: 
-  C:\Program Files\Java\jdk-9.0.1\bin;D:\AndroidSDK\tools;D:\AndroidSDK\platform-tools;;C:\Program Files\dotnet\;C:\windows\system32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Microsoft VS Code\bin;D:\Git\bin;D:\php-7.3.8;C:\ProgramData\ComposerSetup\bin;D:\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\Jia\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Jia\AppData\Local\Programs\Python\Python37-32\;C:\Users\Jia\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Jia\AppData\Local\Programs\Python\Python36-32\;C:\Users\Jia\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\Jia\atom\bin;D:\Microsoft VS Code\bin;C:\Users\Jia\AppData\Local\atom\bin;C:\Users\Jia\AppData\Local\Microsoft\WindowsApps;D:\Bandizip\;D:\flutter_sdk\bin;C:\Users\Jia\AppData\Roaming\Composer\vendor\bin;D:\IntelliJ IDEA Community Edition 2019.2.1\bin;C:\Users\Jia\AppData\Roaming\npm;C:\Users\Jia\AppData\Local\GitHubDesktop\bin;C:\Users\Jia\AppData\Local\Yarn\bin
+  D:\cmder\bin;D:\cmder\vendor\bin;D:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\cmder\vendor\conemu-maximus5;D:\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;D:\XSHELL\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\AndroidSDK\platform-tools;D:\AndroidSDK\tools;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\all_nan\AppData\Local\Microsoft\WindowsApps;C:\Users\all_nan\AppData\Local\Microsoft\WindowsApps;D:\Bandizip\;D:\Microsoft VS Code\bin;C:\Users\all_nan\AppData\Roaming\npm;C:\Users\all_nan\AppData\Local\GitHubDesktop\bin;D:\JetBrains\IntelliJ IDEA\bin;D:\IntelliJ IDEA C\bin;D:\cmder;C:\Users\all_nan\AppData\Local\Yarn\bin;D:\cmder\vendor\git-for-windows\cmd;D:\cmder\vendor\git-for-windows\mingw64\bin;D:\cmder\vendor\git-for-windows\usr\bin;D:\cmder
 
 Yarn version: 
   1.17.3
@@ -14,22 +14,27 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: E:\vue-blog\package.json: Unexpected string in JSON at position 57
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+  Error: https://registry.yarnpkg.com/@vuepress/plugin-nprogress/-/plugin-nprogress-1.1.0.tgz: Request failed "500 Internal Server Error"
+      at ResponseError.ExtendableBuiltin (C:\Program Files (x86)\Yarn\lib\cli.js:696:66)
+      at new ResponseError (C:\Program Files (x86)\Yarn\lib\cli.js:802:124)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:66009:16)
+      at Request.emit (events.js:209:13)
+      at Request.module.exports.Request.onRequestResponse (C:\Program Files (x86)\Yarn\lib\cli.js:141341:10)
+      at ClientRequest.emit (events.js:214:15)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:583:27)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:115:17)
+      at TLSSocket.socketOnData (_http_client.js:456:22)
+      at TLSSocket.emit (events.js:209:13)
 
 npm manifest: 
   {
     "devDependencies": {
       "vuepress": "^1.0.4"
-    }
+    },
   
     "scripts": {
-      "docs:dev": "vuepress dev docs",
-      "docs:build": "vuepress build docs"
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs"
     }
   }
 
