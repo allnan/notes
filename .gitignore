@@ -1,0 +1,9 @@
+# npm
+package-lock.json
+node_modules
+
+# vscode
+.vscode
+
+# vuepress 
+dist
