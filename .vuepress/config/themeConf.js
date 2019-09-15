@@ -8,7 +8,7 @@ module.exports = {
   lastUpdated: "更新于",
   sidebar,
   nav: [
-    { text: "首页", link: "/" },
+    { text: "首页", link: "/docs/" },
     { text: "dart", link: "/dart/" },
     { text: "flutter", link: "/flutter/" },
     { text: "java", link: "/java/" },
