@@ -3,10 +3,9 @@ const navbar = require('./navbar');
 
 module.exports = {
   repo: "allnan/vue-press-doc",
+  sidebar: sidebar,
   navbar: true,
-  editLinks: false,
-  editLinkText: "在 GitHub 上编辑此页",
-  lastUpdated: "更新于",
-  sidebar,
   nav: navbar,
+  editLinks: false,
+  lastUpdated: "更新于",
 };
