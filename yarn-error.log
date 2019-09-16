@@ -1,5 +1,5 @@
 Arguments: 
-  D:\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js build
+  D:\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js dev
 
 PATH: 
   C:\Program Files\Java\jdk-9.0.1\bin;D:\AndroidSDK\tools;D:\AndroidSDK\platform-tools;;C:\Program Files\dotnet\;C:\windows\system32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Microsoft VS Code\bin;D:\Git\bin;D:\php-7.3.8;C:\ProgramData\ComposerSetup\bin;D:\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\Jia\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Jia\AppData\Local\Programs\Python\Python37-32\;C:\Users\Jia\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Jia\AppData\Local\Programs\Python\Python36-32\;C:\Users\Jia\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\Jia\atom\bin;C:\Users\Jia\AppData\Local\atom\bin;C:\Users\Jia\AppData\Local\Microsoft\WindowsApps;D:\Bandizip\;D:\flutter_sdk\bin;C:\Users\Jia\AppData\Roaming\Composer\vendor\bin;D:\IntelliJ IDEA Community Edition 2019.2.1\bin;C:\Users\Jia\AppData\Roaming\npm;C:\Users\Jia\AppData\Local\GitHubDesktop\bin;C:\Users\Jia\AppData\Local\Yarn\bin;D:\cmder
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\Jia\Desktop\vue-press-doc\package.json: Unexpected token } in JSON at position 879
+  SyntaxError: C:\Users\Jia\Desktop\vue-press-doc\package.json: Unexpected token } in JSON at position 843
       at JSON.parse (<anonymous>)
       at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -26,8 +26,8 @@ npm manifest:
     "name": "blog",
     "version": "1.0.0",
     "description": "all_nan's blog.",
-      "author": "心谭",
-      "license": "MIT",
+    "author": "all_nan",
+    "license": "MIT",
     "devDependencies": {
       "vuepress": "^1.1.0",
       "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
@@ -46,11 +46,10 @@ npm manifest:
       "lint": "node bin/prettier.js -t docs -l",
       "check:notes": "node bin/prettier.js -t notes -c",
       "lint:notes": "node bin/prettier.js -t notes -l",
-      "dev": "./node_modules/.bin/vuepress dev .",
       "start": "npm run dev",
-      "build": "./node_modules/.bin/vuepress build ."
-    },
-  
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs",
+    }
   }
 
 yarn manifest: 
