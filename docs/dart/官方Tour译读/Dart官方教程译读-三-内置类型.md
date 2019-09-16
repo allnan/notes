@@ -1,36 +1,6 @@
 ---
 title: 'Dart官方教程译读[三] 内置类型'
-tags:
-  - Dart
-  - 学习
-  - Dart学习
-categories:
-  - Dart学习
-toc:
-  - title: 内置类型
-    id: 内置类型
-    index: '1'
-    children:
-      - title: numbers-数值
-        id: numbers-数值
-        index: '1.1'
-      - title: string-字符串
-        id: string-字符串
-        index: '1.2'
-      - title: Booleans-布尔
-        id: Booleans-布尔
-        index: '1.3'
-      - title: Lists-列表
-        id: Lists-列表
-        index: '1.4'
-      - title: Sets-
-        id: Sets
-        index: '1.5'
-img: ''
 author: all_nan
-top: 'false'
-cover: 'false'
-thumbnail: /images/2019/09/10/9e8b4930-d37a-11e9-8f86-9b3936cfc1fe.svg
 date: 2019-09-10 11:24:09
 updated: 2019-09-12 17:43:20
 ---

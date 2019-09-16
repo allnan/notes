@@ -89,7 +89,7 @@ final String nickname = 'Chou';
 ```Dart
 name = 'Kim';  // Error: a final variable can only be set once.
 ```
-![final常量不能改动值](../images/2019/09/10/8307d860-d373-11e9-8f86-9b3936cfc1fe.jpg)
+<!-- ![final常量不能改动值](../images/2019/09/10/8307d860-d373-11e9-8f86-9b3936cfc1fe.jpg) -->
 
 ### const
 
