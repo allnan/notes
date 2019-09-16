@@ -1,4 +1,5 @@
 const sidebar = require("./sidebar");
+const navbar = require('./navbar');
 
 module.exports = {
   repo: "allnan/vue-press-doc",
@@ -7,11 +8,5 @@ module.exports = {
   editLinkText: "在 GitHub 上编辑此页",
   lastUpdated: "更新于",
   sidebar,
-  nav: [
-    { text: "home", link: "/" },
-    { text: "dart", link: "/dart/" },
-    { text: "flutter", link: "/flutter/" },
-    { text: "java", link: "/java/" },
-    { text: "android", link: "/android/" },
-  ]
+  nav: navbar,
 };
