@@ -2,7 +2,6 @@
 title: "[一] Hello world"
 author: all_nan
 date: 2019-09-06 05:11:37
-updated: 2019-09-09 17:35:02
 ---
 
 本篇文章将展示 Dart 语言的基础特性和语言结构
