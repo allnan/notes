@@ -7,11 +7,10 @@ module.exports = [
           { text: "Dart官网", link: "https://dart.dev/", },
           { text: "Dart官网Tour", link: "https://dart.dev/guides/language/language-tour", },
           { text: "三方翻译", link: "https://github.com/konieshadow/dart-tourY", },
-          { text: "", link: "", },
         ],
       },{
         text: "学习", items: [
-            {text:"Dart官方Tour译读",link:"/dart/"}
+          { text: "Dart官方Tour译读", link:"/dart/官方Tour译读/"}
         ]
       }
     ]
