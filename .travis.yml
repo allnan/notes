@@ -9,6 +9,7 @@ node_js:
   - "10"
 install:
   - npm install
+  - npm run build
 script:
-  - npm run check
-  - ./deploy.sh
+  - chmod u+x deploy.sh
+  - bash ./deploy.sh
