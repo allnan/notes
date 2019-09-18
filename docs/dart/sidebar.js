@@ -1,7 +1,7 @@
 module.exports = [
     {
         title: 'Dart官方Tour译读',
-        // collapsable: false,
+        collapsable: true,
         path:'/dart/官方Tour译读/',
         sidebarDepth: 2,
         children: [
