@@ -13,6 +13,8 @@ module.exports = {
     host: "0.0.0.0", //访问路径
     port: "4960", //端口
 
+    base:"/vuepress-docs/",
+
     head: headConf,
     locales: localesConf,
     markdown: markdownConf,

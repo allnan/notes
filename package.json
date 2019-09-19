@@ -24,7 +24,8 @@
     "lint:notes": "node bin/prettier.js -t notes -l",
     "start": "npm run dev",
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy":"./deploy.sh"
   },
   "dependencies": {
     "axios": "0.18.1"
