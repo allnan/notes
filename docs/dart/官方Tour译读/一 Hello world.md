@@ -58,6 +58,10 @@ main 方法，Dart 程序的入口方法。
 
 声明弱类型变量的一种方式
 
+::: tip NOTE
+本教程中的代码都遵循[Dart语言标准指南](https://dart.dev/guides/language/effective-dart/style)公约。
+:::
+
 ## 重要概念
 
 当你学习 Dart 的时候，需要记住的概念
