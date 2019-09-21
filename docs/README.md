@@ -15,5 +15,3 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
 # hello world
-
-![](./res/2019-09-22-01-00-33.png)
