@@ -11,7 +11,7 @@ module.exports = {
     description: "all_nan's notes", //描述
 
     // host: "0.0.0.0", //访问路径
-    // port: "4960", //端口
+    port: "4960", //端口
 
     // base:"/",
 
