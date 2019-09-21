@@ -8,12 +8,12 @@ const slidebarConf = require('./config/sidebar')
 
 module.exports = {
     title: "all_nan", //标题
-    description: "all_nan's blog", //描述
+    description: "all_nan's notes", //描述
 
-    host: "0.0.0.0", //访问路径
+    // host: "0.0.0.0", //访问路径
     // port: "4960", //端口
 
-    base:"/",
+    // base:"/",
 
     head: headConf,
     locales: localesConf,

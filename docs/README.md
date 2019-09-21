@@ -2,7 +2,7 @@
 home: true
 # heroImage: /hero.png
 heroText: all_nan
-tagline: all_nan' blog
+tagline: all_nan' notes
 actionText: nothing
 features:
 - title: 简洁至上
