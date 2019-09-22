@@ -1,7 +1,7 @@
 {
-  "name": "blog",
+  "name": "notes",
   "version": "1.0.0",
-  "description": "all_nan's blog.",
+  "description": "all_nan's notes.",
   "author": "all_nan",
   "license": "MIT",
   "devDependencies": {

@@ -11,5 +11,7 @@ module.exports = {
             // popupComponent: 'MySWUpdatePopup',
         }
     },
-    '@vuepress/back-to-top': true
+    '@vuepress/back-to-top': true,
+    '@vuepress/active-header-links':{},
+    
 }

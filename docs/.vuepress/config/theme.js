@@ -2,7 +2,7 @@ const sidebarConf = require("./sidebar");
 const navbarConf = require('./navbar');
 
 module.exports = {
-  repo: "allnan/vue-press-doc",
+  repo: "allnan/notes",
   sidebar: sidebarConf,
   navbar: true,
   nav: navbarConf,

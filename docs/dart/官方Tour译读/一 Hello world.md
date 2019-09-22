@@ -44,7 +44,7 @@ int 是一个类型，Dart 固有的常用类型还有`String` `List` `bool`等
 
 or"some text" 表示字符串
 
-### \$variableName
+### $variableName
 
 or\${expression}
 

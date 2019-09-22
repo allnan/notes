@@ -15,7 +15,7 @@ module.exports = [
       }
     ]
   },
-  { text: "flutter", link: "/flutter/" },
-  { text: "java", link: "/java/" },
-  { text: "android", link: "/android/" },
+  // { text: "flutter", link: "/flutter/" },
+  // { text: "java", link: "/java/" },
+  // { text: "android", link: "/android/" },
 ]
