@@ -28,6 +28,7 @@
     "d": "./deploy.sh"
   },
   "dependencies": {
-    "axios": "0.18.1"
+    "axios": "0.18.1",
+    "markdown-it-sup": "^1.0.0"
   }
 }
