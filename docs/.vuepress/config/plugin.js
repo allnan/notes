@@ -12,7 +12,8 @@ module.exports = {
         }
     },
     '@vuepress/back-to-top': true,
-    '@vuepress/active-header-links':{},
-    'markdown-it-sup':{},
+    '@vuepress/active-header-links':true,
+    'markdown-it-sup':true,
+    'emoji':true
     
 }
