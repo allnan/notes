@@ -4,6 +4,7 @@ const navbarConf = require('./navbar');
 module.exports = {
   repo: "allnan/notes",
   sidebar: sidebarConf,
+  smoothScroll: true,
   navbar: true,
   nav: navbarConf,
   editLinks: false,
