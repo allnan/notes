@@ -2,6 +2,17 @@ module.exports = {
     // '@vuepress/register-components': {
     //     componentsDir: './components'
     // },
+    '@vuepress/back-to-top': true,
+    '@vuepress/active-header-links':true,
+    'vuepress-plugin-smooth-scroll':true,
+    '@vuepress/nprogress':true,
+    '@vuepress/medium-zoom': true,
+    'reading-progress':true,
+    'vuepress-plugin-element-tabs':true,
+    'vuepress-plugin-container':{
+
+    },
+
     '@vuepress/pwa': {
         serviceWorker: true,
         updatePopup: {
@@ -11,7 +22,6 @@ module.exports = {
             // popupComponent: 'MySWUpdatePopup',
         }
     },
-    '@vuepress/back-to-top': true,
-    '@vuepress/active-header-links':true,
-    'markdown-it-sup':true,
+
+
 }
