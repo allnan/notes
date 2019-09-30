@@ -7,5 +7,9 @@ module.exports = {
   toc: { 
     includeLevel: [1, 2, 3]
   },
-  lineNumbers: true
+  lineNumbers: false,
+  extendMarkdown: md => {
+    // 使用更多的 markdown-it 插件!
+    md.use(require('markdown-it-sup'))
+  },
 }

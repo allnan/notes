@@ -9,6 +9,7 @@ module.exports = {
     '@vuepress/medium-zoom': true,
     'reading-progress':true,
     'vuepress-plugin-element-tabs':true,
+    'vuepress-plugin-cat':true,
     'vuepress-plugin-container':{
 
     },

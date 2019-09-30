@@ -1,14 +1,14 @@
 module.exports = [
     {
-        title: 'Dart官方Tour译读',
+        title: 'Dart official tour',
         collapsable: true,
-        path:'/dart/官方Tour译读/',
+        path:'/dart/official_tour_translate/',
         sidebarDepth: 2,
         children: [
-          '/dart/官方Tour译读/一 Hello world',
-          '/dart/官方Tour译读/二 变量',
-          '/dart/官方Tour译读/三 内置类型',
-          '/dart/官方Tour译读/四 函数',
+          '/dart/official_tour_translate/hello_world',
+          '/dart/official_tour_translate/variables',
+          '/dart/official_tour_translate/build_in_types',
+          '/dart/official_tour_translate/functions',
         ]
     }
 ]

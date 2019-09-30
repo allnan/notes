@@ -10,7 +10,7 @@ module.exports = [
         ],
       },{
         text: "学习", items: [
-          { text: "Dart官方Tour译读", link:"/dart/官方Tour译读/"}
+          { text: "Dart official tour", link:"/dart/official_tour_translate/"}
         ]
       }
     ]

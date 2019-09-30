@@ -300,6 +300,162 @@ list.forEach(
     (item) => print('${list.indexOf(item)}: $item'));
 ```
 
-## 作用域
+## 词法作用域
 
-Dart是一种词汇作用域语言，意味着变量在域中是静态确定的，
+Dart是一种词汇作用域语言，意味着变量在域中是按照代码的布局的方式静态确定的。你可以根据变量与花括号的相对位置来确定变量是否在域中起作用。
+
+下面嵌套函数的例子解释了多个层级变量的作用域范围：
+
+:::: tabs
+::: tab code
+
+```Dart
+bool topLevel = true;
+
+void main() {
+  var insideMain = true;
+
+  void myFunction() {
+    var insideFunction = true;
+
+    void nestedFunction() {
+      var insideNestedFunction = true;
+
+      print(topLevel);
+      print(insideMain);
+      print(insideFunction);
+      print(insideNestedFunction);
+    }
+  }
+}
+```
+
+:::
+::: tab output
+
+```console
+true
+true
+true
+true
+```
+
+:::
+::::
+
+可以看出例子中的`nestedFunction()`函数可以调用所有上层域的变量。
+
+## 词法闭包
+
+词法闭包定义为一个函数对象可以访问它自身域中的对象，即使这个函数是在原本的域之外调用的。
+
+函数可以可以获取它自身周围域中定义的变量。下面的例子中，`makeAdder()`函数获取了变量`addBy`。无论返回的函数在哪里被调用，它都会持有`addBy`变量。
+
+:::: tabs
+::: tab code
+
+``` Dart
+// 该函数返回一个[向传参i加上addBy]的函数
+Function makeAdder(num addBy) {
+  return (num i) => addBy + i;
+}
+
+void main() {
+  // 生成一个向传参+2的函数
+  var add2 = makeAdder(2);
+
+  // 生成一个向传参+4的函数
+  var add4 = makeAdder(4);
+  print(add2(3));
+  print(add4(3));
+}
+```
+
+:::
+::: tab output
+
+``` Console
+5
+7
+```
+
+:::
+::::
+
+## 函数的一致性
+
+下面是一个测试顶级函数，静态函数，实例函数一致性的例子：
+
+:::: tabs
+::: tab code
+
+```Dart
+void foo() {} // 一个顶级函数
+
+class A {
+  static void bar() {} // 一个静态函数
+  void baz() {} // 一个实例函数
+}
+
+void main() {
+  var x;
+
+  // 和顶级函数比较
+  x = foo;
+  print('[foo == x] -> ${foo == x}');
+
+  // 和静态函数比较
+  x = A.bar;
+  print('[A.bar == x] -> ${A.bar == x}');
+
+  // 和实例函数比较
+  var v = A(); // Instance #1 of A
+  var w = A(); // Instance #2 of A
+  var y = w;
+  x = w.baz;
+
+  // 这些闭包指向了同一个实例,所以他们是相等的
+  print('[y.baz == x] -> ${y.baz == x}');
+
+  // 这些闭包指向了不同的实例,所以他们是不相等的
+  print('[v.baz != w.baz] -> ${v.baz != w.baz}');
+}
+```
+
+:::
+::: tab output
+
+```console
+[foo == x] -> true
+[A.bar == x] -> true
+[y.baz == x] -> true
+[v.baz != w.baz] -> true
+
+```
+
+:::
+::::
+
+## 返回值
+
+所有的函数都会返回一个值，如果没有指定返回值，Dart会在函数体中隐式添加上一个`return null;`语句，来默认返回一个null。
+
+:::: tabs
+::: tab code
+
+```Dart
+foo() {}
+void main(){
+  print(foo());
+}
+```
+
+:::
+::: tab output
+
+```console
+null
+```
+
+:::
+::::
