@@ -27,4 +27,6 @@ Dart 定义了下列表中的操作符，其中的多数操作符都可以被重
 | cascade                  | 级联操作符           | `..`                                      |
 | assignment               | 符值操作符           | `=` `*=` `/=` `+=` `-=` `&=` `^=` etc.    |
 
-
+::: warning Warning
+操作符的优先权和 Dart 解析器中的表现很相近。更加准确的信息，请参考[Dart 语言规范](https://dart.dev/guides/language/spec)中的代码。
+:::
