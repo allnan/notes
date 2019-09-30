@@ -9,6 +9,7 @@ module.exports = [
           '/dart/official_tour_translate/variables',
           '/dart/official_tour_translate/build_in_types',
           '/dart/official_tour_translate/functions',
+          '/dart/official_tour_translate/operators',
         ]
     }
 ]
