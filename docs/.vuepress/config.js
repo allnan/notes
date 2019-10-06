@@ -18,5 +18,5 @@ module.exports = {
   locales: localesConf,
   markdown: markdownConf,
   plugins: pluginsConf,
-  themeConfig: themeConf
+  themeConfig: themeConf,
 };

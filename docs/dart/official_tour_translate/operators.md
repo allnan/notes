@@ -242,6 +242,230 @@ b ??= value;
 
 组合赋值运算符指像`+=`这样将其他运算符与赋值运算符组合成的带操作的赋值操作符
 
-|`=`|`-=`|`/=`|`%=`|`>>=`|`^=`|
-|----|----|----|----|----|----|
-|`+=`|`*=`|`~/=`|`<<=`|`&=`|`|=`|
+| `=`  | `-=` | `/=`  | `%=`  | `>>=` | `^=` |
+| ---- | ---- | ----- | ----- | ----- | ---- |
+| `+=` | `*=` | `~/=` | `<<=` | `&=`  | `|=` |
+
+下面是组合赋值操作符的工作形式
+
+|                        | 组合符值操作符 | 等价表达式   |
+| ---------------------- | -------------- | ------------ |
+| **对于一个操作符**`op` | `a op = b`     | `a = a op b` |
+| **例**                 | `a += b`       | `a = a + b`  |
+
+:::: tabs
+::: tab code
+
+```Dart
+  dynamic a = 10;
+  print('dynamic a = $a');
+  print('a += 5 -> a = ${a += 5}');
+  print('a -= 5 -> a = ${a -= 5}');
+  print('a *= 5 -> a = ${a *= 5}');
+  print('a /= 5 -> a = ${a /= 5}');
+  print('a = ${a = 49}');
+  print('a %= 5 -> a = ${a %= 5}');
+  print('a = ${a = 49}');
+  print('a ~/= 5 -> a = ${a ~/= 5}');
+  print('a = ${a = 2}');
+  print('a <<= 2 -> a = ${a <<= 2}');
+  print('a >>= 2 -> a = ${a >>= 2}');
+  print('a = ${a = 9}');
+  print('a &= 5 -> a = ${a &= 5}');
+  print('a = ${a = 9}');
+  print('a ^= 5 -> a = ${a ^= 5}');
+  print('a = ${a = 9}');
+  print('a |= 5 -> a = ${a |= 5}');
+```
+
+:::
+::: tab output
+
+```console
+dynamic a = 10
+a += 5 -> a = 15
+a -= 5 -> a = 10
+a *= 5 -> a = 50
+a /= 5 -> a = 10.0
+a = 49
+a %= 5 -> a = 4
+a = 49
+a ~/= 5 -> a = 9
+a = 2
+a <<= 2 -> a = 8
+a >>= 2 -> a = 2
+a = 9
+a &= 5 -> a = 1
+a = 9
+a ^= 5 -> a = 12
+a = 9
+a |= 5 -> a = 13
+```
+
+:::
+::::
+
+## 逻辑操作符
+
+用逻辑操作符可以反转或者组合布尔表达式
+
+| 操作符  | 解释               |
+| ------- | ------------------ |
+| `!expr` | 反转表达式的布尔值 |
+| `||`    | 逻辑或             |
+| `&&`    | 逻辑与             |
+
+逻辑操作符使用示例
+
+```Dart
+if (!done && (col == 0 || col == 3)) {
+  // ...Do something...
+}
+```
+
+## 按位和移位操作符
+
+| 操作符  | 解释                                   |
+| ------- | -------------------------------------- |
+| `&`     | 按位与                                 |
+| `|`     | 按位或                                 |
+| `^`     | 按位异或                               |
+| `~expr` | 一元按位补码（0s 变成 1s，1s 变成 0s） |
+| `<<`    | 向左移位                               |
+| `>>`    | 向右移位                               |
+
+按位与移位操作符的例子：
+
+:::: tabs
+::: tab code
+
+```Dart
+  final value = 0x22;
+  final bitmask = 0x0f;
+
+  print('(value & bitmask) = 0x${(value & bitmask).toRadixString(16).toUpperCase()}'); // 按位与
+  print('(value & ~bitmask = 0x${(value & ~bitmask).toRadixString(16).toUpperCase()}'); // 按位与然后取补码
+  print('(value | bitmask) = 0x${(value | bitmask).toRadixString(16).toUpperCase()}'); // 按位或
+  print('(value ^ bitmask) = 0x${(value ^ bitmask).toRadixString(16).toUpperCase()}'); // 按位异或
+  print('(value << 4) = 0x${(value << 4).toRadixString(16).toUpperCase()}');  // 向左移位
+  print('(value >> 4) = 0x${(value >> 4).toRadixString(16).toUpperCase()}');  // 向右移位
+```
+
+:::
+::: tab output
+
+```console
+(value & bitmask) = 0x2
+(value & ~bitmask = 0x20
+(value | bitmask) = 0x2F
+(value ^ bitmask) = 0x2D
+(value << 4) = 0x220
+(value >> 4) = 0x2
+```
+
+:::
+::::
+
+## 条件表达式
+
+Dart 有两种操作符可以让`if-else`表达式更简介
+
+- condition ? expr1 : expr2
+
+  如果条件`condition`为 true，执行表达式`expr1`，否则执行表达式`expr2`
+
+- expr1 ?? expr2
+
+  如果表达式`expr1`不为 null，返回`expr1`的值，反之，返回`expr2`的值
+
+当你需要根据一个布尔表达式判断情况给一个变量赋值的时候，考虑用`?:`：
+
+```Dart
+var visibility = isPublic ? 'public' : 'private';
+```
+
+如果要进行空值判断，考虑用`??`
+
+```Dart
+String playerName(String name) => name ?? 'Guest';
+```
+
+上面的例子至少可以用两种方法代替，但是都不够简洁
+
+```Dart
+// 用 ?: 操作符.
+String playerName(String name) => name != null ? name : 'Guest';
+
+// 用 if-else 判断操作
+String playerName(String name) {
+  if (name != null) {
+    return name;
+  } else {
+    return 'Guest';
+  }
+}
+```
+
+## 级联操作符
+
+级联(`..`)操作允许对同一个对象进行序列操作，除了函数的调用，你也可以获取对象的字段。级联操作符允许编写链式编码，省掉了创建临时变量的步骤。
+
+观察下列代码
+
+```Dart
+querySelector('#confirm') // 一个对象
+  ..text = 'Confirm'
+  ..classes.add('important')
+  ..onClick.listen((e) => window.alert('Confirmed!'));
+```
+
+第一行代码的方法`querySelector()`，返回一个 selector 对象，这个对象后面级联调用的方法，会忽略所有可能返回的值。
+
+上面的例子和下面的代码等效
+
+```Dart
+var button = querySelector('#confirm');
+button.text = 'Confirm';
+button.classes.add('important');
+button.onClick.listen((e) => window.alert('Confirmed!'));
+```
+
+你也可以嵌套级联操作符：
+
+```Dart
+final addressBook = (AddressBookBuilder()
+      ..name = 'jenny'
+      ..email = 'jenny@example.com'
+      ..phone = (PhoneNumberBuilder()
+            ..number = '415-555-0100'
+            ..label = 'home')
+          .build())
+    .build();
+```
+
+当函数返回一个确切的对象的时候，调用级联需要谨慎，下面的例子会出错
+
+```Dart
+var sb = StringBuffer();
+sb.write('foo')
+  ..write('bar'); // void没有定义`write`方法
+```
+
+上面例子种的`sb.write()`会返回一个 void，而级联不能对 void 使用。
+
+::: tip Note
+严格来说，“两个点”标记的级联不算一个操作符，它是 Dart 语法中的一部分
+:::
+
+## 其他操作符
+
+剩下的大多数操作符已经在以前的例子中多次出现了
+
+| 操作符 | 名称         | 解释                                                                                                                       |
+| ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `()`   | 功能应用     | 代表调用一个函数                                                                                                           |
+| `[]`   | 列表访问     | 指向列表中指定位置的值                                                                                                     |
+| `.`    | 成员访问     | 访问表达式的属性，例如`foo.bar`访问了`foo`的`bar`属性                                                                      |
+| `?.`   | 条件成员访问 | 和`.`类似，但是左侧的操作对象可为 null，  例如`foo?.bar`，如果`foo`不为 null 则返回`bar`的值，`foo`为空时，`foo?.bar`为 null |
+
+更多`.`、`?.`和`..`的信息，参阅[类](https://dart.dev/guides/language/language-tour#classes)
