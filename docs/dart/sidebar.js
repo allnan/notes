@@ -11,6 +11,7 @@ module.exports = [
           '/dart/official_tour_translate/functions',
           '/dart/official_tour_translate/operators',
           '/dart/official_tour_translate/control_flow_statements',
+          '/dart/official_tour_translate/exceptions',
         ]
     }
 ]
