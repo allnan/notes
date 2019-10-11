@@ -291,11 +291,11 @@ class Employee extends Person {
 }
 ```
 
-::: Warning
+::: warning Warning
 父类构造函数中的参数不能使用`this`。例如参数可以调用静态方法但是不可以调用实例方法。
 :::
 
-## 初始化列表
+### 初始化列表
 
 除了调用父类构造器，还可以在构造器运行之前初始化实例变量。初始化值之间用`,`分隔。
 
@@ -308,8 +308,206 @@ Point.fromJson(Map<String, num> json)
 }
 ```
 
-::: Warning
+::: warning Warning
 每个初始化值的右侧都不能使用this
 :::
 
 程序开发中可以用`assert`来验证初始化列表
+
+```Dart
+Point.withAssert(this.x, this.y) : assert(x >= 0) {
+  print('In Point.withAssert(): ($x, $y)');
+}
+```
+
+当需要设置常量字段的时候使用初始化列表会很方便。下面的例子在初始化列表中给三个final字段设置了初始值：
+
+:::: tabs
+::: tab Point-class
+
+``` Dart
+import 'dart:math';
+
+class Point {
+  final num x;
+  final num y;
+  final num distanceFromOrigin;
+
+  Point(x, y)
+      : x = x,
+        y = y,
+        distanceFromOrigin = sqrt(x * x + y * y);
+}
+```
+
+:::
+::: tab main-code
+
+``` Dart
+main() {
+  var p = new Point(2, 3);
+  print(p.distanceFromOrigin);
+}
+```
+
+:::
+::: tab output
+
+``` console
+ 3.605551275463989
+```
+
+::::
+
+### 重定向构造器
+
+有时候一个构造器的目的仅仅是重定向至同一个类的其他构造器。重定向构造器的构造体为空，在重定向构造器后面跟上(`:`)和被引用的构造器即可。
+
+```Dart
+class Point {
+  num x, y;
+
+  // Point类的主要构造器
+  Point(this.x, this.y);
+
+  // 委托给主要构造器
+  Point.alongXAxis(num x) : this(x, 0);
+}
+```
+
+### 常量构造器
+
+如果一个类生成的对象永远不会改变，可以把这些对象变成编译时常量。你需要定义一个`const`构造器并且所有的实例变量都是`final`的。
+
+```Dart
+class ImmutablePoint {
+  static final ImmutablePoint origin =
+      const ImmutablePoint(0, 0);
+
+  final num x, y;
+
+  const ImmutablePoint(this.x, this.y);
+}
+```
+
+常量构造器并不是总是生成常量，参阅[构造器的使用](https://dart.dev/guides/language/language-tour#using-constructors)章节。
+
+### 工厂构造器
+
+如果要创建一个不总是创建一个类的新实例的构造器，使用`factory`关键词来标注。例如，一个工厂构造器可能返回缓存中的实例，也可能返回一个子类的实例。
+
+下面的例子示范了一个工厂构造器返回一个车缓存中的实例：
+
+```Dart
+class Logger {
+  final String name;
+  bool mute = false;
+
+  // _cache is library-private, thanks to
+  // the _ in front of its name.
+  static final Map<String, Logger> _cache =
+      <String, Logger>{};
+
+  factory Logger(String name) {
+    return _cache.putIfAbsent(
+        name, () => Logger._internal(name));
+  }
+
+  Logger._internal(this.name);
+
+  void log(String msg) {
+    if (!mute) print(msg);
+  }
+}
+```
+
+::: tip Note
+工厂构造器不能反问this
+:::
+
+调用工厂函数和其他函数的方式一样：
+
+```Dart
+var logger = Logger('UI');
+logger.log('Button clicked');
+```
+
+## 方法
+
+方法是指为对象提供性为的函数
+
+### 实例方法
+
+一个对象的实例方法可以访问实例变量和`this`。下列例子中的`distanceTo()`方法就是一个实例方法：
+
+```Dart
+import 'dart:math';
+
+class Point {
+  num x, y;
+
+  Point(this.x, this.y);
+
+  num distanceTo(Point other) {
+    var dx = x - other.x;
+    var dy = y - other.y;
+    return sqrt(dx * dx + dy * dy);
+  }
+}
+```
+
+### Getters和setters
+
+Getters和setters方法是特殊方法，用来提供对象属性的读写权限。所有的实例变量都有一个隐式的getter方法，如果不是final变量，还会有一个setter方法。可以通过用get和set实现getters和setters方法来创建额外的属性：
+
+```Dart
+class Rectangle {
+  num left, top, width, height;
+
+  Rectangle(this.left, this.top, this.width, this.height);
+
+  // 定义了两个计算值属性: right 和 bottom.
+  num get right => left + width;
+  set right(num value) => left = value - width;
+  num get bottom => top + height;
+  set bottom(num value) => top = value - height;
+}
+
+void main() {
+  var rect = Rectangle(3, 4, 20, 15);
+  assert(rect.left == 3);
+  rect.right = 12;
+  assert(rect.left == -8);
+}
+```
+
+通过getters和setters，可以先写实例变量，然后包装成方法，甚至都不用更改代码。
+
+::: tip Note
+像递增(`++`)这样的操作符，无论是否明确定义了getter方法，都能正确执行。为了避免一些意外的影响，操作符只会调用一次getter方法，然后把值保存在临时变量中。
+:::
+
+### 抽象方法
+
+实例方法、getter和setter方法都可以是抽象方法，定义在一个接口中让其他类来实现抽象的方法。抽象方法只能出现在[抽象类](https://dart.dev/guides/language/language-tour#abstract-classes)中。
+
+定义一个抽象方法，需要用(`;`)来替代方法体：
+
+```Dart
+abstract class Doer {
+  // 定义实例变量和方法（normal
+
+  // 定义抽象方法
+  void doSomething();
+}
+
+class EffectiveDoer extends Doer {
+  void doSomething() {
+    //实现了方法，所以这个方法不是抽象方法。
+  }
+}
+```
+
+## 抽象类
+
+用`abstract`关键词来定义一个
