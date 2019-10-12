@@ -510,4 +510,122 @@ class EffectiveDoer extends Doer {
 
 ## 抽象类
 
-用`abstract`关键词来定义一个
+用`abstract`关键词来定义一个不能实例化的抽象类。抽象类在定义接口的时候很有用，通常带有一些实现（？）。如果想要实例化一个抽象类，需要定义[工厂构造器](https://dart.dev/guides/language/language-tour#factory-constructors)。
+
+抽象类通常有若干抽象方法：
+
+```Dart
+// 声明了一个抽象类，不能实例化
+abstract class AbstractContainer {
+  // 声明 构造器, 字段, 方法...
+
+  void updateChildren(); // 抽象方法.
+}
+```
+
+## 隐式接口
+
+每一个类都隐式地定义了一个包含了所有实例成员和所有它实现的接口的接口。如果想定义一个支持B类API的A类而不继承B类的实现，A类应该实现B类的接口。
+
+一个类通过在`implements`分句
+中声明接口来实现一个或者多个接口，然后实现这些接口中的API：
+
+:::: tabs
+::: tab Person.class
+
+``` Dart
+// 一个Person类，隐式接口包括greet()方法
+class Person {
+  // 在隐式接口中，但是只在当前库中
+  final _name;
+
+  //是个构造器，不在隐式接口中
+  Person(this._name);
+
+  // 存在于隐式接口中
+  String greet(String who) => 'Hello, $who. I am $_name.';
+}
+```
+
+:::
+::: tab Imposter.class
+
+``` Dart
+// 一个Person接口的实现类
+class Impostor implements Person {
+  get _name => '';
+
+  String greet(String who) => 'Hi $who. Do you know who I am?';
+}
+```
+
+:::
+::: tab main()
+
+``` Dart
+String greetBob(Person person) => person.greet('Bob');
+
+void main() {
+  print(greetBob(Person('Kathy')));
+  print(greetBob(Impostor()));
+}
+```
+
+:::
+::: tab output
+
+``` console
+Hello, Bob. I am Kathy.
+Hi Bob. Do you know who I am?
+```
+
+:::
+::::
+
+一个实现了多个接口的类的简单例子：
+
+```Dart
+class Point implements Comparable, Location {...}
+```
+
+## 继承类
+
+用`extends`继承一个类来创建一个子类，类中的`super`指向其父类：
+
+```Dart {9,11}
+class Television {
+  void turnOn() {
+    _illuminateDisplay();
+    _activateIrSensor();
+  }
+  // ···
+}
+
+class SmartTelevision extends Television {
+  void turnOn() {
+    super.turnOn();
+    _bootNetworkInterface();
+    _initializeMemory();
+    _upgradeApps();
+  }
+  // ···
+}
+```
+
+### 重写类成员
+
+子类可以重新父类的实例、getters和setters方法。可以用`@override`注解来声明有意要重写的成员：
+
+```Dart {2}
+class SmartTelevision extends Television {
+  @override
+  void turnOn() {...}
+  // ···
+}
+```
+
+如果需要缩小代码中方法参数或者实例变量的类型而且保持[类型安全](https://dart.dev/guides/language/sound-dart)，可以使用[covariant关键词](https://dart.dev/guides/language/sound-problems#the-covariant-keyword)。
+
+### 重载操作符
+
+你可以重载下表中的操作符。

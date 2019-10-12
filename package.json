@@ -37,5 +37,7 @@
     "axios": "0.18.1",
     "vuepress-plugin-cat": "^1.0.3",
     "vuepress-plugin-reading-progress": "^1.0.7"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/allnan/notes.git"
 }
