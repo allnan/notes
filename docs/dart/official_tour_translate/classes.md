@@ -98,7 +98,7 @@ const pointAndLine = {
 :::
 ::::
 
-如果常量构造函数位于常量上下文之外，而且没有用const声明调用，它将创建一个非常量对象：
+如果常量构造函数位于常量上下文之外，而且没有用 const 声明调用，它将创建一个非常量对象：
 
 ```Dart
 //创建一个常量
@@ -111,7 +111,7 @@ assert(!identical(a, b));
 ```
 
 :::tip Version Note
-在 Dart<Badge text = "2.0" vertical = "middle"/>之后，常量上下文内部的const关键词是可选的。
+在 Dart<Badge text = "2.0" vertical = "middle"/>之后，常量上下文内部的 const 关键词是可选的。
 :::
 
 ## 获取对象类型
@@ -136,9 +136,9 @@ class Point {
 }
 ```
 
-未初始化的实例变量值都为null。
+未初始化的实例变量值都为 null。
 
-实例变量会生成一个隐式的`getter`方法，非final实例变量也会生成隐式的`setter`方法。细节讨论请参阅[Getters and setters](https://dart.dev/guides/language/language-tour#getters-and-setters)。
+实例变量会生成一个隐式的`getter`方法，非 final 实例变量也会生成隐式的`setter`方法。细节讨论请参阅[Getters and setters](https://dart.dev/guides/language/language-tour#getters-and-setters)。
 
 ```Dart
 class Point {
@@ -175,10 +175,10 @@ class Point {
 `this`关键词引用当前实例。
 
 :::tip
-请只有在命名冲突的时候使用`this`，否则Dart规范会忽略`this`。
+请只有在命名冲突的时候使用`this`，否则 Dart 规范会忽略`this`。
 :::
 
-将构造函数的值用来初始化实例变量，是很常见的操作，Dart有一个语法糖来简化这个过程：
+将构造函数的值用来初始化实例变量，是很常见的操作，Dart 有一个语法糖来简化这个过程：
 
 ```Dart
 class Point {
@@ -192,7 +192,7 @@ class Point {
 
 ### 默认构造器
 
-如果一个类中没有声明构造器，Dart会提供一个默认的构造器。默认构造器是无参的并且会调用父类中的无参构造器。
+如果一个类中没有声明构造器，Dart 会提供一个默认的构造器。默认构造器是无参的并且会调用父类中的无参构造器。
 
 ### 构造器不被继承
 
@@ -233,7 +233,7 @@ class Point {
 :::: tabs
 ::: tab Person
 
-``` Dart
+```Dart
 class Person {
   String firstName;
 
@@ -246,7 +246,7 @@ class Person {
 :::
 ::: tab Employee
 
-``` Dart
+```Dart
 class Employee extends Person {
   // Person类没有默认构造器
   // 必须调用 super.fromJson(data).
@@ -259,7 +259,7 @@ class Employee extends Person {
 :::
 ::: tab code
 
-``` Dart
+```Dart
 main() {
   var emp = new Employee.fromJson({});
 
@@ -274,7 +274,7 @@ main() {
 :::
 ::: tab output
 
-``` console
+```console
 in Person
 in Employee
 ```
@@ -309,7 +309,7 @@ Point.fromJson(Map<String, num> json)
 ```
 
 ::: warning Warning
-每个初始化值的右侧都不能使用this
+每个初始化值的右侧都不能使用 this
 :::
 
 程序开发中可以用`assert`来验证初始化列表
@@ -320,12 +320,12 @@ Point.withAssert(this.x, this.y) : assert(x >= 0) {
 }
 ```
 
-当需要设置常量字段的时候使用初始化列表会很方便。下面的例子在初始化列表中给三个final字段设置了初始值：
+当需要设置常量字段的时候使用初始化列表会很方便。下面的例子在初始化列表中给三个 final 字段设置了初始值：
 
 :::: tabs
 ::: tab Point-class
 
-``` Dart
+```Dart
 import 'dart:math';
 
 class Point {
@@ -343,7 +343,7 @@ class Point {
 :::
 ::: tab main-code
 
-``` Dart
+```Dart
 main() {
   var p = new Point(2, 3);
   print(p.distanceFromOrigin);
@@ -353,7 +353,7 @@ main() {
 :::
 ::: tab output
 
-``` console
+```console
  3.605551275463989
 ```
 
@@ -422,7 +422,7 @@ class Logger {
 ```
 
 ::: tip Note
-工厂构造器不能反问this
+工厂构造器不能反问 this
 :::
 
 调用工厂函数和其他函数的方式一样：
@@ -456,9 +456,9 @@ class Point {
 }
 ```
 
-### Getters和setters
+### Getters 和 setters
 
-Getters和setters方法是特殊方法，用来提供对象属性的读写权限。所有的实例变量都有一个隐式的getter方法，如果不是final变量，还会有一个setter方法。可以通过用get和set实现getters和setters方法来创建额外的属性：
+Getters 和 setters 方法是特殊方法，用来提供对象属性的读写权限。所有的实例变量都有一个隐式的 getter 方法，如果不是 final 变量，还会有一个 setter 方法。可以通过用 get 和 set 实现 getters 和 setters 方法来创建额外的属性：
 
 ```Dart
 class Rectangle {
@@ -481,15 +481,15 @@ void main() {
 }
 ```
 
-通过getters和setters，可以先写实例变量，然后包装成方法，甚至都不用更改代码。
+通过 getters 和 setters，可以先写实例变量，然后包装成方法，甚至都不用更改代码。
 
 ::: tip Note
-像递增(`++`)这样的操作符，无论是否明确定义了getter方法，都能正确执行。为了避免一些意外的影响，操作符只会调用一次getter方法，然后把值保存在临时变量中。
+像递增(`++`)这样的操作符，无论是否明确定义了 getter 方法，都能正确执行。为了避免一些意外的影响，操作符只会调用一次 getter 方法，然后把值保存在临时变量中。
 :::
 
 ### 抽象方法
 
-实例方法、getter和setter方法都可以是抽象方法，定义在一个接口中让其他类来实现抽象的方法。抽象方法只能出现在[抽象类](https://dart.dev/guides/language/language-tour#abstract-classes)中。
+实例方法、getter 和 setter 方法都可以是抽象方法，定义在一个接口中让其他类来实现抽象的方法。抽象方法只能出现在[抽象类](https://dart.dev/guides/language/language-tour#abstract-classes)中。
 
 定义一个抽象方法，需要用(`;`)来替代方法体：
 
@@ -525,15 +525,15 @@ abstract class AbstractContainer {
 
 ## 隐式接口
 
-每一个类都隐式地定义了一个包含了所有实例成员和所有它实现的接口的接口。如果想定义一个支持B类API的A类而不继承B类的实现，A类应该实现B类的接口。
+每一个类都隐式地定义了一个包含了所有实例成员和所有它实现的接口的接口。如果想定义一个支持 B 类 API 的 A 类而不继承 B 类的实现，A 类应该实现 B 类的接口。
 
 一个类通过在`implements`分句
-中声明接口来实现一个或者多个接口，然后实现这些接口中的API：
+中声明接口来实现一个或者多个接口，然后实现这些接口中的 API：
 
 :::: tabs
 ::: tab Person.class
 
-``` Dart
+```Dart
 // 一个Person类，隐式接口包括greet()方法
 class Person {
   // 在隐式接口中，但是只在当前库中
@@ -550,7 +550,7 @@ class Person {
 :::
 ::: tab Imposter.class
 
-``` Dart
+```Dart
 // 一个Person接口的实现类
 class Impostor implements Person {
   get _name => '';
@@ -562,7 +562,7 @@ class Impostor implements Person {
 :::
 ::: tab main()
 
-``` Dart
+```Dart
 String greetBob(Person person) => person.greet('Bob');
 
 void main() {
@@ -574,7 +574,7 @@ void main() {
 :::
 ::: tab output
 
-``` console
+```console
 Hello, Bob. I am Kathy.
 Hi Bob. Do you know who I am?
 ```
@@ -614,7 +614,7 @@ class SmartTelevision extends Television {
 
 ### 重写类成员
 
-子类可以重新父类的实例、getters和setters方法。可以用`@override`注解来声明有意要重写的成员：
+子类可以重新父类的实例、getters 和 setters 方法。可以用`@override`注解来声明有意要重写的成员：
 
 ```Dart {2}
 class SmartTelevision extends Television {
@@ -624,8 +624,61 @@ class SmartTelevision extends Television {
 }
 ```
 
-如果需要缩小代码中方法参数或者实例变量的类型而且保持[类型安全](https://dart.dev/guides/language/sound-dart)，可以使用[covariant关键词](https://dart.dev/guides/language/sound-problems#the-covariant-keyword)。
+如果需要缩小代码中方法参数或者实例变量的类型而且保持[类型安全](https://dart.dev/guides/language/sound-dart)，可以使用[covariant 关键词](https://dart.dev/guides/language/sound-problems#the-covariant-keyword)。
 
 ### 重载操作符
 
-你可以重载下表中的操作符。
+你可以重载下表中的操作符。例如如果定义了一个矢量类，可以重载`+`操作符让两个矢量相加。
+
+| `<`  | `+`  | `|`  | `[]`  |
+| ---- | ---- | ---- | ----- |
+| `>`  | `/`  | `^`  | `[]=` |
+| `<=` | `~/` | `&`  | `~`   |
+| `>=` | `*`  | `<<` | `==`  |
+| `-`  | `%`  | `>>` |       |
+
+::: tip Note
+你可能发现了`!=`操作符不能被重载。这是因为表达式`e1 != e2`只是`!(e1 == e2)`写法的语法糖。
+:::
+
+下面是一个重载`+`和`-`操作符的例子：
+
+:::: tabs
+::: tab Vector.class
+
+``` Dart
+class Vector {
+  final int x, y;
+
+  Vector(this.x, this.y);
+
+  Vector operator +(Vector v) => Vector(x + v.x, y + v.y);
+  Vector operator -(Vector v) => Vector(x - v.x, y - v.y);
+
+  // 操作符==和hashCode没有展示，参阅下方笔记
+  // ···
+}
+```
+
+:::
+::: tab main()
+
+``` Dart
+void main() {
+  final v = Vector(2, 3);
+  final w = Vector(2, 2);
+
+  print('v + w = $Vector(4, 5)');
+  print('v - w = $Vector(0, 1)');
+}
+```
+
+:::
+::: tab output
+
+``` console
+
+```
+
+:::
+::::
