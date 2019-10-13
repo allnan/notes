@@ -653,10 +653,15 @@ class Vector {
   Vector(this.x, this.y);
 
   Vector operator +(Vector v) => Vector(x + v.x, y + v.y);
+
   Vector operator -(Vector v) => Vector(x - v.x, y - v.y);
 
-  // 操作符==和hashCode没有展示，参阅下方笔记
-  // ···
+  @override
+  String toString() => '{$x, $y}';
+
+// 操作符==和hashCode没有展示，参阅下方笔记
+// ···
+
 }
 ```
 
@@ -668,8 +673,8 @@ void main() {
   final v = Vector(2, 3);
   final w = Vector(2, 2);
 
-  print('v + w = $Vector(4, 5)');
-  print('v - w = $Vector(0, 1)');
+  print('v + w = ${Vector(4, 5)}');
+  print('v - w = ${Vector(0, 1)}');
 }
 ```
 
@@ -677,7 +682,73 @@ void main() {
 ::: tab output
 
 ``` console
+v + w = {4, 5}
+v - w = {0, 1}
+```
 
+:::
+::::
+
+如果你重载了`==`操作符，你应该也把该类的`hashCode`获取方法也重写。[实现Map键](https://dart.dev/guides/libraries/library-tour#implementing-map-keys)一栏中有重载`==`和重写`hashCode`的例子。
+
+更多`重写/重载`的信息，参阅[继承类](https://dart.dev/guides/language/language-tour#extending-a-class)。
+
+### noSuchMethod()
+
+为了指出或者响应试图访问不存在方法或者实例变量的代码，你可以重写`noSuchMethod()`：
+
+```Dart
+class A {
+  // 除非重写了noSuchMethod，不然调用
+  // 不存在成员会导致NoSuchMethodError。
+  @override
+  void noSuchMethod(Invocation invocation) {
+    print('You tried to use a non-existent member: ' +
+        '${invocation.memberName}');
+  }
+}
+```
+
+至少满足以下条件的其中一个的情况下，才可以调用未实现的方法：
+
+- 接收者有静态类型`dynamic`
+- 接收者有一个定义了改未实现方法的静态类型（抽象亦可），并且接收者的该动态类型有一个不同于`Object`类的`noSuchMethod()`的实现。
+
+更多信息请参阅[noSuchMethod转发规范](https://github.com/dart-lang/sdk/blob/master/docs/language/informal/nosuchmethod-forwarding.md)。
+
+## 枚举类型
+
+枚举类型，经常被称作`enumerations`(枚举)或者`enums`(枚举)，是一种用来表示固定数量的常量值的特殊类型。
+
+### 使用枚举
+
+用`enum`来声明一个枚举类：
+
+```Dart
+enum Color { red, green, blue }
+```
+
+每一个枚举中的值都有一个`index`（索引位置）的getter，会从0开始返回该值在枚举声明时的位置。例如，第一个索引是0，第二个索引值是1。
+
+:::: tabs
+::: tab code
+
+``` Dart
+enum Color { red, green, blue }
+
+void main(){
+  Color.values.forEach((f) =>
+      print('${f.toString()}.index = ${f.index}'));
+}
+```
+
+:::
+::: tab output
+
+``` console
+Color.red.index = 0
+Color.green.index = 1
+Color.blue.index = 2
 ```
 
 :::
