@@ -18,5 +18,6 @@ module.exports = {
   locales: localesConf,
   markdown: markdownConf,
   plugins: pluginsConf,
+  theme: 'reco',
   themeConfig: themeConf,
 };

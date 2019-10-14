@@ -2,6 +2,10 @@
 title: "[二] 变量"
 author: all_nan
 date: 2019-09-09 05:41:27
+categories: 
+ - Dart
+tags: 
+ - Dart
 ---
 
 ## 变量的类型

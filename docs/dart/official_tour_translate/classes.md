@@ -2,6 +2,10 @@
 title: "[八] 类"
 author: all_nan
 date: 2019-10-08 23:03:00
+categories: 
+ - Dart
+tags: 
+ - Dart
 ---
 
 ## 类
@@ -56,7 +60,7 @@ var p2 = new Point.fromJson({'x': 1, 'y': 2});
 
 有一些类会提供[常量构造器](https://dart.dev/guides/language/language-tour#constant-constructors)。在构造器名称前加上`const`关键词来调用常量构造器创建一个编译时常量。
 
-```Dat
+```Dart
 var p = const ImmutablePoint(2, 2);
 ```
 

@@ -5,7 +5,6 @@
   "author": "all_nan",
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
     "@vuepress/plugin-medium-zoom": "^1.0.0-rc.1",
     "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
@@ -36,7 +35,7 @@
   "dependencies": {
     "axios": "0.18.1",
     "vuepress-plugin-cat": "^1.0.3",
-    "vuepress-plugin-reading-progress": "^1.0.7"
+    "vuepress-theme-reco": "^1.0.9-alpha.11"
   },
   "main": "index.js",
   "repository": "https://github.com/allnan/notes.git"
