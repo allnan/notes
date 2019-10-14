@@ -825,4 +825,92 @@ class Maestro extends Person
 }
 ```
 
-要声明一个
+要实现一个mixin，创建一个继承自Object的类并且不能有构造器。用`mixin`而不是`class`关键词声明，否则只会得到一个常规的类。例如：
+
+```Dart
+mixin Musical {
+  bool canPlayPiano = false;
+  bool canCompose = false;
+  bool canConduct = false;
+
+  void entertainMe() {
+    if (canPlayPiano) {
+      print('Playing piano');
+    } else if (canConduct) {
+      print('Waving hands');
+    } else {
+      print('Humming to self');
+    }
+  }
+}
+```
+
+用`on`指定所指向的父类来声明能用这个mixin的类型。例如，这样你的mixin就可以调用它没有定义的方法：
+
+```Dart
+mixin MusicalPerformer on Musician {
+  // ···
+}
+```
+
+::: tip Version Note
+从Dart<Badge text="2.1"/>开始`mixin`关键词被引入支持。在之前的版本中通常都是用`abstract class`来声明`mixin`。Dart<Badge text="2.1"/>版本中的mixin变更信息，请参阅[Dart SDK 版本记录](https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md)与[2.1 mixin说明与使用规范](https://github.com/dart-lang/language/blob/master/accepted/2.1/super-mixins/feature-specification.md#dart-2-mixin-declarations)。
+:::
+
+## 类变量类方法
+
+用`static`关键词来实现类级别的变量和方法。
+
+### 静态变量
+
+静态变量（类变量）在类级别的状态和常量非常有用：
+
+```Dart
+class Queue {
+  static const initialCapacity = 16;
+  // ···
+}
+
+void main() {
+  assert(Queue.initialCapacity == 16);
+}
+```
+
+静态变量只有在被用到的时候才会开始初始化。
+
+::: tip Note
+本文代码遵循[代码风格指南](https://dart.dev/guides/language/effective-dart/style#identifiers)中的`小驼峰`命名法来为常量命名。
+:::
+
+### 静态方法
+
+静态方法（类方法）不能操作实例，并且也不能访问`this`，例如：
+
+```Dart
+import 'dart:math';
+
+class Point {
+  num x, y;
+  Point(this.x, this.y);
+
+  static num distanceBetween(Point a, Point b) {
+    var dx = a.x - b.x;
+    var dy = a.y - b.y;
+    return sqrt(dx * dx + dy * dy);
+  }
+}
+
+void main() {
+  var a = Point(2, 2);
+  var b = Point(4, 4);
+  var distance = Point.distanceBetween(a, b);
+  assert(2.8 < distance && distance < 2.9);
+  print(distance);
+}
+```
+
+::: tip Note
+对于通用或者广泛运用的工具类和功能实现，考虑使用顶级方法而不是静态方法。
+:::
+
+可以将静态方法用错编译时常量。例如，可以将静态方法当作常量构造器的参数传入。

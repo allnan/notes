@@ -13,6 +13,7 @@ module.exports = [
           '/dart/official_tour_translate/control_flow_statements',
           '/dart/official_tour_translate/exceptions',
           '/dart/official_tour_translate/classes',
+          '/dart/official_tour_translate/generics',
         ]
     }
 ]
