@@ -757,3 +757,72 @@ Color.blue.index = 2
 
 :::
 ::::
+
+调用枚举的常量`values`来获取一个枚举中所有值的列表对象。
+
+:::: tabs
+::: tab code
+
+``` Dart
+enum Color { red, green, blue }
+
+void main(){
+  print(Color.values);
+}
+```
+
+:::
+::: tab output
+
+``` console
+[Color.red, Color.green, Color.blue]
+```
+
+:::
+::::
+
+在[switch语句](https://dart.dev/guides/language/language-tour#switch-and-case)可以使用枚举，如果没有处理所有的枚举值会抛出一个警告：
+
+```Dart
+var aColor = Color.blue;
+
+switch (aColor) {
+  case Color.red:
+    print('Red as roses!');
+    break;
+  case Color.green:
+    print('Green as grass!');
+    break;
+  default: // 没有这一条或者Color.blue，会报出一条Warning
+    print(aColor); // 'Color.blue'
+}
+```
+
+使用枚举类型需要注意以下几点：
+
+- 不能被继承，混合或者实现一个枚举
+- 不能显式实例化一个枚举
+
+更多信息请参阅[Dart语言规范](https://dart.dev/guides/language/spec)。
+
+## 用`mixins`给类添加特性
+
+混合（`mixins`）可以用来在多个继承类中复用代码。
+
+用关键词`with`跟上一个或者多个要混合的mixin名称来使用混合，参考下面两个例子：
+
+```Dart {1,6}
+class Musician extends Performer with Musical {
+  // ···
+}
+
+class Maestro extends Person
+    with Musical, Aggressive, Demented {
+  Maestro(String maestroName) {
+    name = maestroName;
+    canConduct = true;
+  }
+}
+```
+
+要声明一个
