@@ -378,7 +378,7 @@ void main() {
 :::
 ::: tab output
 
-``` Console
+``` console
 5
 7
 ```

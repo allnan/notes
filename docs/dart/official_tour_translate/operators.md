@@ -94,7 +94,7 @@ Dart 支持下表中的常用算数操作符
 :::
 ::: tab output
 
-```Console
+```console
 19 ~/ 2 = 9
 2 + 3 = 5
 2 - 3= -1
@@ -134,7 +134,7 @@ Dart 也支持前置和后置的自增、自减操作符。
 :::
 ::: tab output
 
-```Console
+```console
 a = 5, ++a = 6, after this, a = 6
 b = 5, b++ = 5, bfter this, b = 6
 c = 5, --c = 4, cfter this, c = 4

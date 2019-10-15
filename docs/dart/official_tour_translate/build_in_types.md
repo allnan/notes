@@ -21,7 +21,7 @@ Dart 语言内置了以下几种类型，并且提供了特殊支持
 - runes (用 string 表达 Unicode 字符)
 - symbols
 
-你可以用字符值来初始化这些特殊类型，像是`this is a string`是一个字符串字符值，`true`是一个布尔字符值。
+你可以用字面值来初始化这些特殊类型，像是`this is a string`是一个字符串字面值，`true`是一个布尔字面值。
 
 由于 Dart 中所有的变量都是一个对象---是类的一个实例，所以你通常可以用构造函数来初始化变量。有一部分内置类型有他们自己的构造器。例如你可以用`Map()`构造器来创造一个 map 对象。
 
@@ -97,7 +97,7 @@ assert((3 >> 1) == 1); // 0011 >> 1 == 0001
 assert((3 | 4) == 7); // 0011 | 0100 == 0111
 ```
 
-以字符值定义的数值都是编译时常量，许多算术表达式也是编译时常量，只要他们的操作数是编译时常量且最后得到一个数值。
+以字面值定义的数值都是编译时常量，许多算术表达式也是编译时常量，只要他们的操作数是编译时常量且最后得到一个数值。
 
 ```Dart
 const msPerSecond = 1000;
@@ -202,7 +202,7 @@ _更多信息和 string 的使用方法，请参考[String 和正则表达式](h
 
 ## Booleans-布尔
 
-Dart 内置了一个`bool`的类型来表示布尔值。只有两个对象属于布尔值，布尔字符值：`true`和`false`，两者都是编译时常量。
+Dart 内置了一个`bool`的类型来表示布尔值。只有两个对象属于布尔值，布尔字面值：`true`和`false`，两者都是编译时常量。
 
 Dart 是类型安全的，意味着你不可以这样写代码`if (nonbooleanValue)`或者`assert (nonbooleanValue)`。需要明确地检查值
 
@@ -251,7 +251,7 @@ assert(list[1] == 1);
 
 ### 常量List
 
-如果打算创建一个编译常量的列表，在列表字符值前面加上 const
+如果打算创建一个编译常量的列表，在列表字面值前面加上 const
 
 ```Dart
 var constantList = const [1, 2, 3];
@@ -319,15 +319,15 @@ List 类内置了很多操作列表的方法，参考[泛型](https://dart.dev/g
 
 ## Sets-无序唯一集合
 
-Dart 中 set 是无序并且元素唯一的一个集合。Dart 通过 set 字符值和 Set 类型来定义和支持 Set 类型。
+Dart 中 set 是无序并且元素唯一的一个集合。Dart 通过 set 字面值和 Set 类型来定义和支持 Set 类型。
 
 ::: tip Version Note
-虽然 Set 类型一直是 Dart 核心库的一部分，但是 set 字符值是 Dart<Badge text="2.2"/>以后才被引入的。
+虽然 Set 类型一直是 Dart 核心库的一部分，但是 set 字面值是 Dart<Badge text="2.2"/>以后才被引入的。
 :::
 
 ### 创建Set对象
 
-例：用 set 字符值来创建 Dart set 对象
+例：用 set 字面值来创建 Dart set 对象
 
 ```Dart
 var sins = {'Pride', 'Envy', 'Gluttony', 'Lust', 'Anger', 'Greed', 'Sloth'};
@@ -344,7 +344,7 @@ var names = {}; // 这将得到一个map，而不是set.
 ```
 
 ::: tip Set or Map
-Set 和 Map 的字符值语法很相近，这是因为 Map 字符值的优先级更高。{}默认为 Map 类型。如果忘记了对{}进行类型声明，或者忘了对{}指向的变量声明类型，Dart 会将这个{}指向的对象创建为`Map<dynamic, dynamic>`类型。
+Set 和 Map 的字面值语法很相近，这是因为 Map 字面值的优先级更高。{}默认为 Map 类型。如果忘记了对{}进行类型声明，或者忘了对{}指向的变量声明类型，Dart 会将这个{}指向的对象创建为`Map<dynamic, dynamic>`类型。
 :::
 
 ### 添加set项
@@ -368,7 +368,7 @@ elements.addAll(halogens);
 assert(elements.length == 5);
 ```
 
-#### 用`const`来修饰 set 字符值，以创造一个编译时常量
+#### 用`const`来修饰 set 字面值，以创造一个编译时常量
 
 ```Dart
 final constantSet = const {'Pride', 'Envy', 'Gluttony', 'Lust', 'Anger', 'Greed', 'Sloth'};
@@ -385,11 +385,11 @@ final constantSet = const {'Pride', 'Envy', 'Gluttony', 'Lust', 'Anger', 'Greed'
 
 ## Maps
 
-通常来说，一个 map 对象是由复数个相关联的键值对组合而成的。键和值都可以是任意类型，每一个键只会在一个 map 中出现一次，但是同样的值可以出现多次，Dart 支持用 Dart 字符值和 Map 类来`提供/产出/声明`map 变量。
+通常来说，一个 map 对象是由复数个相关联的键值对组合而成的。键和值都可以是任意类型，每一个键只会在一个 map 中出现一次，但是同样的值可以出现多次，Dart 支持用 Dart 字面值和 Map 类来`提供/产出/声明`map 变量。
 
 ### 创建Map对象
 
-#### 用 map 字符值来创建 Dart map 对象的例子
+#### 用 map 字面值来创建 Dart map 对象的例子
 
 ```Dart
 var gifts = {
@@ -479,7 +479,7 @@ gifts['fourth'] = 'calling birds'; // 添加一个键值对
 print(planet.length);//output --> 8
 ```
 
-#### 如果想要创建一个运行时常量的 map，再 map 字符值前面加上 const
+#### 如果想要创建一个运行时常量的 map，再 map 字面值前面加上 const
 
 ```Dart {8,9}
   var fourHolyCreatures = const{
@@ -558,4 +558,4 @@ main() {
 #bar
 ```
 
-Symbol 字符值是编译时常量。
+Symbol 字面值是编译时常量。

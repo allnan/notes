@@ -73,7 +73,7 @@ var b = const ImmutablePoint(1, 1);
 assert(identical(a, b)); // a与b是同一个实例
 ```
 
-在一个*常量上下文*中，字符值和构造器之前的`const`可以省略。下列例子中创建了一个常量 map，一个使用了很多 const，一个只在一开始用了 const：
+在一个*常量上下文*中，字面值和构造器之前的`const`可以省略。下列例子中创建了一个常量 map，一个使用了很多 const，一个只在一开始用了 const：
 
 :::: tabs
 ::: tab Lots-const
