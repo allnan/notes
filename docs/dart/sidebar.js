@@ -14,6 +14,7 @@ module.exports = [
           '/dart/official_tour_translate/exceptions',
           '/dart/official_tour_translate/classes',
           '/dart/official_tour_translate/generics',
+          '/dart/official_tour_translate/libraries',
         ]
     }
 ]
