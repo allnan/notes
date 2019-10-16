@@ -88,3 +88,84 @@ var nameSet = Set<String>.from(names);
 ```Dart
 var views = Map<int, View>();
 ```
+
+## 泛型集合及其包含的类型
+
+Dart的泛型是*具体化的*，意味着在运行时随时携带着类型信息。例如一下例子中的集合类型：
+
+```Dart
+var names = List<String>();
+names.addAll(['Seth', 'Kathy', 'Lars']);
+print(names is List<String>); // true
+```
+
+::: tip Note
+相比起来，Java中的泛型采用的是*擦除*，意味着运行时泛型类型会被移除。在Java中，你可以测试一个对象是不是List类型的，但是不可以测试它是不是`List<String>`类型的。
+:::
+
+## 限制参数类型
+
+当你实现一个泛型并打算限制它参数的类型时，可以用`extends`。
+
+:::: tabs
+::: tab origin
+
+``` Dart
+class Foo<T extends SomeBaseClass> {
+  String toString() => "Instance of 'Foo<$T>'";
+}
+
+class Extender extends SomeBaseClass {...}
+```
+
+:::
+::: tab subs
+
+``` Dart
+//类及其子类可以当作泛型的类型
+var someBaseClassFoo = Foo<SomeBaseClass>();
+var extenderFoo = Foo<Extender>();
+```
+
+:::
+::: tab no-args
+
+``` Dart
+//也可以不传入泛型类型
+var foo = Foo();
+print(foo); // Instance of 'Foo<SomeBaseClass>'
+```
+
+:::
+::: tab wrong-type
+
+::: danger Error
+
+``` Dart
+//传入非限定类型会导致错误
+var foo = Foo<Object>();
+```
+
+:::
+::::
+
+## 使用泛型方法
+
+最初Dart的泛型只支持类。在新的语法中，dart支持了*泛型方法*，允许方法和函数携带类型参数：
+
+```Dart
+T first<T>(List<T> ts) {
+  //检查和初始化操作
+  T tmp = ts[0];
+  // 检查和处理
+  return tmp;
+}
+```
+
+`first<T>`中的泛型参数允许在以下位置调用：
+
+- 函数返回的类型中(`T`)
+- 参数的类型中(`List<T>`)
+- 本地变量的类型中(`T tmp`)
+
+更多泛型的信息，参阅[使用泛型方法](https://github.com/dart-lang/sdk/blob/master/pkg/dev_compiler/doc/GENERIC_METHODS.md)。
