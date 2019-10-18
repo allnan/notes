@@ -95,3 +95,44 @@ Future<String> lookUpVersion() async => '1.0.0';
 需要留意的是函数体不需要使用Future的API。如果必要的话Dart会创建Future对象。如果函数没有返回有用的值，确保它返回`Future<Void>`类型。
 
 有关使用Future、`async`和`await`的更多介绍，请参考[异步编程实验室](https://dart.dev/codelabs/async-await)。
+
+## 处理流
+
+当你需要从流中获取值的时候，你有两个选项：
+
+- 使用`async`和一个异步for循环（`await for`）
+- 使用流API，在[库教程](https://dart.dev/guides/libraries/library-tour#stream)中有描述。
+
+::: warning Note
+在你使用`await for`之前，确保代码清晰明确并且你确实想要等待流的所有结果，例如，你通常**不**应该在UI监听事件中使用`await for`，因为UI框架会发送无止境的事件流。
+:::
+
+一个异步for循环形式大致如下：
+
+```Dart
+await for (varOrType identifier in expression) {
+  // 每执行一次流都会发射一个值
+}
+```
+
+其中`expression`的值必须是Stream类型的。执行流程如下：
+
+1. 等待流发射一个值
+2. 使用发射的值作为变量，执行循环体
+3. 重复步骤1和2知道流关闭
+
+可以在循环中使用`break`和`return`语句来停止监听流，跳出循环并取消订阅该流。
+
+**如果在使用异步for循环的时候出现了编译时错误，确保`await for`是在一个异步函数中使用的。** 例如，在`main()`函数中使用异步for循环的时候，确保用`async`来标记`main()`函数体：
+
+```Dart
+Future main() async {
+  // ...
+  await for (var request in requestServer) {
+    handleRequest(request);
+  }
+  // ...
+}
+```
+
+更多异步编程的信息，通常可以参阅库教程中的[dart:async](https://dart.dev/guides/libraries/library-tour#dartasync---asynchronous-programming)。

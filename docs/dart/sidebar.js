@@ -16,6 +16,7 @@ module.exports = [
           '/dart/official_tour_translate/generics',
           '/dart/official_tour_translate/libraries',
           '/dart/official_tour_translate/asynchrony',
+          '/dart/official_tour_translate/generators',
         ]
     }
 ]
