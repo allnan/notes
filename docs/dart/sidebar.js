@@ -19,6 +19,10 @@ module.exports = [
           '/dart/official_tour_translate/generators',
           '/dart/official_tour_translate/callable_classes',
           '/dart/official_tour_translate/isolate',
+          '/dart/official_tour_translate/typedefs',
+          '/dart/official_tour_translate/metadata',
+          '/dart/official_tour_translate/comments',
+          '/dart/official_tour_translate/summary',
         ]
     }
 ]
