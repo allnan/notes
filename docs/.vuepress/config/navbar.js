@@ -17,7 +17,7 @@ module.exports = [
       {
         text: "学习",
         items: [
-          { text: "Dart official tour", link: "/dart/official_tour_translate/" }
+          { text: "Dart language tour", link: "/dart/language_tour_translate/" }
         ]
       }
     ],
