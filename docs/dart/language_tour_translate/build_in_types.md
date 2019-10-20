@@ -12,14 +12,14 @@ tags:
 
 Dart 语言内置了以下几种类型，并且提供了特殊支持
 
-- numbers
-- strings
-- booleans
-- lists (arrays)
-- sets
-- maps
-- runes (用 string 表达 Unicode 字符)
-- symbols
+- [numbers](./build_in_types.md#numbers-数值)
+- [strings](./build_in_types.md#string-字符串)
+- [booleans](./build_in_types.md#booleans-布尔)
+- [lists](./build_in_types.md#lists-列表) (arrays)
+- [sets](./build_in_types.md#sets-无序唯一集合)
+- [maps](./build_in_types.md#maps)
+- [runes](./build_in_types.md#runes) (用 string 表达 Unicode 字符)
+- [symbols](./build_in_types.md#symbols)
 
 你可以用字面值来初始化这些特殊类型，像是`this is a string`是一个字符串字面值，`true`是一个布尔字面值。
 
@@ -31,11 +31,11 @@ Dart 语言内置了以下几种类型，并且提供了特殊支持
 
 Dart 中有两种数值类型：
 
-#### int
+#### [int](https://api.dart.dev/stable/dart-core/int-class.html)
 
-  Integer（整型）值最大支持 64 位（这取决于运行的平台）。在 Dart 虚拟机上，Integer 值的范围是`-2^63` - `2^63^-1`，编译到 JavaScript 时使用 JavaScript 的数值，数值范围是`-2^53` - `2^53^-1`。
+  Integer（整型）值最大支持 64 位（这取决于运行的平台）。在 Dart 虚拟机上，Integer 值的范围是`-2^63` - `2^63^-1`，编译到 JavaScript 时使用 [JavaScript 的数值](https://stackoverflow.com/questions/2802957/number-of-bits-in-javascript-numbers/2803010#2803010)，数值范围是`-2^53` - `2^53^-1`。
 
-#### double
+#### [double](https://api.dart.dev/stable/dart-core/double-class.html)
 
   64 位的双精度浮点数值，遵循[IEEE 754](https://zh.wikipedia.org/wiki/IEEE_754)标准。
 
