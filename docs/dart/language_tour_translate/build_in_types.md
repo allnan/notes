@@ -12,14 +12,14 @@ tags:
 
 Dart 语言内置了以下几种类型，并且提供了特殊支持
 
-- [numbers](./build_in_types.md#numbers-数值)
-- [strings](./build_in_types.md#string-字符串)
-- [booleans](./build_in_types.md#booleans-布尔)
-- [lists](./build_in_types.md#lists-列表) (arrays)
-- [sets](./build_in_types.md#sets-无序唯一集合)
-- [maps](./build_in_types.md#maps)
-- [runes](./build_in_types.md#runes) (用 string 表达 Unicode 字符)
-- [symbols](./build_in_types.md#symbols)
+- [numbers](#numbers-数值)
+- [strings](#string-字符串)
+- [booleans](#booleans-布尔)
+- [lists](#lists-列表) (arrays)
+- [sets](#sets-无序唯一集合)
+- [maps](#maps)
+- [runes](#runes) (用 string 表达 Unicode 字符)
+- [symbols](#symbols)
 
 你可以用字面值来初始化这些特殊类型，像是`this is a string`是一个字符串字面值，`true`是一个布尔字面值。
 
@@ -497,7 +497,7 @@ print(planet.length);//output --> 8
 Dart<Badge text="2.3"/>开始，map开始支持拓展操作符(`...`与`...?`)和(collection if与 for)操作符，就和lists一样，更多信息和例子，参阅[拓展操作符](https://github.com/dart-lang/language/blob/master/accepted/2.3/spread-collections/feature-specification.md)和[集合流控制建议](https://github.com/dart-lang/language/blob/master/accepted/2.3/control-flow-collections/feature-specification.md)
 :::
 
-::: MORE
+::: tip
 更多map的信息，参阅[泛型](https://dart.dev/guides/language/language-tour#generics)和[Maps](https://dart.dev/guides/libraries/library-tour#maps)
 :::
 

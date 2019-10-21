@@ -58,10 +58,10 @@ numdefault = null, booldefault = null
 
 ### final 和 const
 
-如果你不打算改变一个常量，用 final 或者 const 来修饰它们，而不是 var 或者除类型名之外的修饰符`(either instead of var or in addition to a type)`。final 变量只能被设置一次值，const 变量是一个编译常量，（Const 常量是隐式 final 常量），final 顶级变量或者类变量在第一次使用的时候被初始化。
+如果你不打算改变一个常量，用 final 或者 const 来修饰它们，而不是 var 或者除类型名之外的修饰符。final 变量只能被设置一次值，const 变量是一个编译常量，（const 常量是隐式 final 常量），final 顶级变量或者类变量在第一次使用的时候被初始化。
 
 ::: tip Note
-实例变量只可以是final的，不能用const修饰。Final实例常量必须在构造函数开始前被初始化--在变量声明时、通过构造函数参数或者在构造函数的[初始化列表](./classes.md#初始化列表)中。
+实例变量只可以是final的，不能用const修饰。final实例常量必须在构造函数开始前被初始化--在变量声明时、通过构造函数参数或者在构造函数的[初始化列表](./classes.md#初始化列表)中。
 :::
 
 ### final

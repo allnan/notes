@@ -163,7 +163,7 @@ candidates
 
 ## Switch 和 case
 
-在 Dart 中 switch 语句用`==`比较 integer，string 或者编译时常量。被比较的对象必须是同一个类（亦不能是其中的任意字类），并且比较类型不能重载`==`。[枚举类型](https://dart.dev/guides/language/language-tour#enumerated-types)可以应用在 switch 语句中。
+在 Dart 中 switch 语句用`==`比较 integer，string 或者编译时常量。被比较的对象必须是同一个类（亦不能是其中的任意子类），并且比较类型不能重载`==`。[枚举类型](https://dart.dev/guides/language/language-tour#enumerated-types)可以应用在 switch 语句中。
 
 ::: tip Note
 Dart 中 Switch 语句只适用于有限条件的情况，像是 interpreters 和 scanners
