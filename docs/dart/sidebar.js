@@ -23,6 +23,7 @@ module.exports = [
           '/dart/language_tour_translate/metadata',
           '/dart/language_tour_translate/comments',
           '/dart/language_tour_translate/summary',
+          '/dart/language_tour_translate/to_be_continued',
         ]
     }
 ]
