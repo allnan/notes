@@ -13,6 +13,7 @@ module.exports = {
   /*reco theme config*/
   type: "blog",
   logo: "/avatar.jpg",
+  authorAvatar:"/avatar.jpg",
   // 博客设置
   blogConfig: {
     category: {
