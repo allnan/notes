@@ -3,7 +3,7 @@ const navbarConf = require("./navbar");
 
 module.exports = {
   sidebar: sidebarConf,
-  author: 'all_nan',
+  author: "all_nan",
   smoothScroll: true,
   navbar: true,
   nav: navbarConf,
@@ -12,7 +12,7 @@ module.exports = {
 
   /*reco theme config*/
   type: "blog",
-  logo: '/avatar.jpg',
+  logo: "/avatar.jpg",
   // 博客设置
   blogConfig: {
     category: {
@@ -29,7 +29,6 @@ module.exports = {
     appId: "orYT8TAmrrxvNRchXm5LSvXt-gzGzoHsz",
     appKey: "WcQh3BQeN6iusz8mT7ifMccv",
     placeholder: "你刚才说了JoJo对吧",
-    avatar: "",
-
+    avatar: ""
   }
 };
