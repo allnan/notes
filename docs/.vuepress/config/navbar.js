@@ -23,11 +23,11 @@ module.exports = [
     ],
     icon: "reco-api"
   },
-  {
-    text: "Game",
-    icon: "reco-other",
-    items: [{ text: "minecraft", link: "/game/minecraft/", icon: "reco-other" }]
-  },
+  // {
+  //   text: "Game",
+  //   icon: "reco-other",
+  //   items: [{ text: "minecraft", link: "/game/minecraft/", icon: "reco-other" }]
+  // },
   { text: "时间轴", link: "/timeLine/", icon: "reco-date" },
   {
     text: "关于",
