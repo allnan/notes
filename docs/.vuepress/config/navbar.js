@@ -4,17 +4,6 @@ module.exports = [
     text: "Dart",
     items: [
       {
-        text: "参考",
-        items: [
-          { text: "Dart官网", link: "https://dart.dev/" },
-          {
-            text: "Dart官网Tour",
-            link: "https://dart.dev/guides/language/language-tour"
-          },
-          { text: "三方翻译", link: "https://github.com/konieshadow/dart-tour" }
-        ]
-      },
-      {
         text: "学习",
         items: [
           { text: "Dart language tour", link: "/dart/language_tour_translate/" }
