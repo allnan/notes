@@ -1,8 +1,8 @@
 ---
 home: true
-# heroImage: /hero.png
-heroText: all_nan
-tagline: all_nan' notes
+heroImage: './banner.gif'
+heroText: null
+tagline: Little birds can remember
 
 isShowTitleInHome: false
 faceImage: '/avatar.jpg'

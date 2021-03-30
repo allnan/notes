@@ -3,7 +3,7 @@ module.exports = [
         title: 'Dart language tour',
         collapsable: true,
         path:'/dart/language_tour_translate/',
-        sidebarDepth: 2,
+        sidebarDepth: 1,
         children: [
           '/dart/language_tour_translate/hello_world',
           '/dart/language_tour_translate/variables',

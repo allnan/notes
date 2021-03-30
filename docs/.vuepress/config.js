@@ -7,7 +7,7 @@ const slidebarConf = require("./config/sidebar");
 
 module.exports = {
   title: "all_nan", //标题
-  description: "all_nan's notes", //描述
+  description: "Little birds can remember", //描述
 
   // host: "0.0.0.0", //访问路径
   port: "10800", //端口
