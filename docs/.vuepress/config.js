@@ -12,7 +12,7 @@ module.exports = {
   // host: "0.0.0.0", //访问路径
   port: "10800", //端口
 
-  // base:"/",
+  // base:"/notes",
 
   head: headConf,
   locales: localesConf,
