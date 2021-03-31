@@ -278,7 +278,7 @@ main() {
 :::
 ::: tab output
 
-```console
+```
 in Person
 in Employee
 ```
@@ -357,7 +357,7 @@ main() {
 :::
 ::: tab output
 
-```console
+```
  3.605551275463989
 ```
 
@@ -578,7 +578,7 @@ void main() {
 :::
 ::: tab output
 
-```console
+```
 Hello, Bob. I am Kathy.
 Hi Bob. Do you know who I am?
 ```
@@ -685,7 +685,7 @@ void main() {
 :::
 ::: tab output
 
-``` console
+``` 
 v + w = {4, 5}
 v - w = {0, 1}
 ```
@@ -749,7 +749,7 @@ void main(){
 :::
 ::: tab output
 
-``` console
+``` 
 Color.red.index = 0
 Color.green.index = 1
 Color.blue.index = 2
@@ -774,7 +774,7 @@ void main(){
 :::
 ::: tab output
 
-``` console
+``` 
 [Color.red, Color.green, Color.blue]
 ```
 

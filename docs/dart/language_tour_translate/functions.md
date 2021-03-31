@@ -288,7 +288,7 @@ void main() {
 :::
 ::: tab output
 
-```console
+```
 0: apples
 1: bananas
 2: oranges
@@ -337,7 +337,7 @@ void main() {
 :::
 ::: tab output
 
-```console
+```
 true
 true
 true
@@ -378,7 +378,7 @@ void main() {
 :::
 ::: tab output
 
-``` console
+``` 
 5
 7
 ```
@@ -429,7 +429,7 @@ void main() {
 :::
 ::: tab output
 
-```console
+```
 [foo == x] -> true
 [A.bar == x] -> true
 [y.baz == x] -> true
@@ -457,7 +457,7 @@ void main(){
 :::
 ::: tab output
 
-```console
+```
 null
 ```
 

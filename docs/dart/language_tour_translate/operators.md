@@ -37,7 +37,7 @@ Dart 定义了下列表中的操作符，其中的多数操作符都可以被重
 
 用操作符可以创建表达式：
 
-```console
+```
 a++
 a + b
 a = b
@@ -94,7 +94,7 @@ Dart 支持下表中的常用算数操作符
 :::
 ::: tab output
 
-```console
+```
 19 ~/ 2 = 9
 2 + 3 = 5
 2 - 3= -1
@@ -134,7 +134,7 @@ Dart 也支持前置和后置的自增、自减操作符。
 :::
 ::: tab output
 
-```console
+```
 a = 5, ++a = 6, after this, a = 6
 b = 5, b++ = 5, bfter this, b = 6
 c = 5, --c = 4, cfter this, c = 4
@@ -181,7 +181,7 @@ print('10 <= 5 -> ${10 <= 5}');
 :::
 ::: tab output
 
-```console
+```
 10 == 5 -> false
 10 != 5 -> true
 15 > 10 -> true
@@ -285,7 +285,7 @@ b ??= value;
 :::
 ::: tab output
 
-```console
+```
 dynamic a = 10
 a += 5 -> a = 15
 a -= 5 -> a = 10
@@ -358,7 +358,7 @@ if (!done && (col == 0 || col == 3)) {
 :::
 ::: tab output
 
-```console
+```
 (value & bitmask) = 0x2
 (value & ~bitmask = 0x20
 (value | bitmask) = 0x2F

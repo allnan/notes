@@ -46,7 +46,7 @@ String name = 'Joe';
 :::
 ::: tab output
 
-``` console
+``` 
 一切对象的默认值都是null
 numdefault = null, booldefault = null
 ```

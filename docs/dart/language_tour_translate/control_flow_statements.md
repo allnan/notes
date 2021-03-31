@@ -64,7 +64,7 @@ callbacks.forEach((c) => c());
 :::
 ::: tab dart-output
 
-```console
+```
 0
 1
 ```
@@ -72,7 +72,7 @@ callbacks.forEach((c) => c());
 :::
 ::: tab js-output
 
-```console
+```
 2
 2
 ```
@@ -103,7 +103,7 @@ for (var x in collection) {
 :::
 ::: tab output
 
-```console
+```
 0
 1
 2

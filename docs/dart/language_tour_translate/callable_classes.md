@@ -30,7 +30,7 @@ main() {
 :::
 ::: tab output
 
-``` console
+``` 
 Hi there, gang!
 ```
 

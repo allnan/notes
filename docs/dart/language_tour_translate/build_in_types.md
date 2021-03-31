@@ -532,7 +532,7 @@ main() {
 :::
 ::: tab output
 
-``` console
+``` 
 //outputs
 👏
 [55357, 56399]

@@ -1,10 +1,10 @@
 module.exports = [
   { text: "主页", link: "/", icon: "reco-home" },
   {
-    text: "Dart",
+    text: "目录",
     items: [
       {
-        text: "学习",
+        text: "Dart",
         items: [
           { text: "Dart language tour", link: "/dart/language_tour_translate/" }
         ]
@@ -13,9 +13,9 @@ module.exports = [
     icon: "reco-api"
   },
   // {
-  //   text: "Game",
-  //   icon: "reco-other",
-  //   items: [{ text: "minecraft", link: "/game/minecraft/", icon: "reco-other" }]
+    // text: "markdown",
+    // icon: "reco-blog",
+    // link:"/markdown/"
   // },
   { text: "时间轴", link: "/timeLine/", icon: "reco-date" },
   {

@@ -23,7 +23,7 @@
     "vuepress-plugin-viewer": "^1.0.0"
   },
   "scripts": {
-    "check2update": "yarn upgrade-interactive --latest",
+    "c2u": "yarn upgrade-interactive --latest",
     "check": "node bin/prettier.js -t docs -c",
     "lint": "node bin/prettier.js -t docs -l",
     "check:notes": "node bin/prettier.js -t notes -c",
