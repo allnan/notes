@@ -1,5 +1,5 @@
 ---
-title: "[八] 类"
+title: "类"
 author: all_nan
 date: 2019-10-08 23:03:00
 categories: 

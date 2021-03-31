@@ -1,5 +1,5 @@
 ---
-title: "[十三] 可调用类"
+title: "可调用类"
 author: all_nan
 date: 2019-10-19 10:14:47
 categories:

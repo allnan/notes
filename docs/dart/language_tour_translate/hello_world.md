@@ -1,5 +1,5 @@
 ---
-title: "[一] Hello world"
+title: "Hello world"
 author: all_nan
 date: 2019-09-06 05:11:37
 categories: 

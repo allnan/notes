@@ -1,5 +1,5 @@
 ---
-title: "[十一] 异步"
+title: "异步"
 author: all_nan
 date: 2019-10-18 15:40:36
 categories:

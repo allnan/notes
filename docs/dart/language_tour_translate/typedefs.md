@@ -1,5 +1,5 @@
 ---
-title: "[十五] Typedefs"
+title: "Typedefs"
 author: all_nan
 date: 2019-10-19 11:10:18
 categories:

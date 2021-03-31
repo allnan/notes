@@ -1,5 +1,5 @@
 ---
-title: "[九] 泛型"
+title: "泛型"
 author: all_nan
 date: 2019-10-15 00:16:00
 categories: 

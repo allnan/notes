@@ -1,5 +1,5 @@
 ---
-title: "[十八] 总结"
+title: "总结"
 author: all_nan
 date: 2019-10-19 17:30:24
 categories:

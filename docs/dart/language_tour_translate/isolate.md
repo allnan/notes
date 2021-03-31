@@ -1,5 +1,5 @@
 ---
-title: "[十四] Isolates"
+title: "Isolates"
 author: all_nan
 date: 2019-10-19 10:36:20
 categories:

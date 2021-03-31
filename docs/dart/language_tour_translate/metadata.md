@@ -1,5 +1,5 @@
 ---
-title: "[十六] 元数据"
+title: "元数据"
 author: all_nan
 date: 2019-10-19 16:36:14
 categories:

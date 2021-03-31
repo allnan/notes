@@ -1,5 +1,5 @@
 ---
-title: "[十七] 注释"
+title: "注释"
 author: all_nan
 date: 2019-10-19 17:11:45
 categories:

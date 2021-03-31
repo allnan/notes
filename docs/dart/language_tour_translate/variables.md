@@ -1,5 +1,5 @@
 ---
-title: "[二] 变量"
+title: "变量"
 author: all_nan
 date: 2019-09-09 05:41:27
 categories: 

@@ -1,5 +1,5 @@
 ---
-title: "[四] 函数"
+title: "函数"
 author: all_nan
 date: 2019-09-28
 categories: 
