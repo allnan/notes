@@ -17,7 +17,3 @@ tags:
 好吧，我还是太菜了，翻译过程中有些操之过急。很多细节和本地链接都没完善。这些时日在学习Flutter，打算学习Flutter的途中，把该系列中的错别字，翻译不通顺，有歧义的地方都修改或者标注出来。FLutter学完能做项目之后，再回头看看Dart官网的[Effective Dart](https://dart.dev/guides/language/effective-dart)和[Core libraries](https://dart.dev/guides/libraries/library-tour)。有意翻译一下。总之坑先挖起来。
 
 ![继续挖坑](./res/2019-10-24-22-07-05.png)
-
-::: theorem
-custom
-:::
