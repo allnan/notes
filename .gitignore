@@ -2,6 +2,9 @@
 package-lock.json
 node_modules
 
+#yarn
+yarn-error.log
+
 # vscode
 .vscode
 
