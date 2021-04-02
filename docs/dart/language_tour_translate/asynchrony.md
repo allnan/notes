@@ -119,7 +119,7 @@ await for (varOrType identifier in expression) {
 
 1. 等待流发射一个值
 2. 使用发射的值作为变量，执行循环体
-3. 重复步骤1和2知道流关闭
+3. 重复步骤1和2直到流关闭
 
 可以在循环中使用`break`和`return`语句来停止监听流，跳出循环并取消订阅该流。
 
