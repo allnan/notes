@@ -1,5 +1,5 @@
 ---
-title: "Isolates"
+title: "隔离区"
 author: all_nan
 date: 2019-10-19 10:36:20
 categories:
