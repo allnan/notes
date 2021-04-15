@@ -3,7 +3,7 @@ const localesConf = require("./config/locales");
 const markdownConf = require("./config/markdown");
 const pluginsConf = require("./config/plugin");
 const themeConf = require("./config/theme");
-const slidebarConf = require("./config/sidebar");
+const sidebarConf = require("./config/sidebar");
 
 module.exports = {
   title: "all_nan", //标题
